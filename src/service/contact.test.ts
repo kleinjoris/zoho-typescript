@@ -20,10 +20,8 @@ describe("Contact Tests", () => {
         });
         zoho = new Zoho(client);
     });
-
     const contactIds: string[] = [];
     let createdContact: string;
-
     test("It should work to create a contact", async () => {
         const contactCreate = await zoho.contact.create({
             contact_persons: [

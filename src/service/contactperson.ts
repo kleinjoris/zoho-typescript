@@ -8,11 +8,9 @@ import { sleep } from "../util/retry";
  */
 export class ContactPersonHandler {
     private client: ZohoApiClient;
-
     constructor(client: ZohoApiClient) {
         this.client = client;
     }
-
     /**
      * Add a contact person to a contact
      * @param contactPerson

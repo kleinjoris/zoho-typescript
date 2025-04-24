@@ -9,11 +9,9 @@ import {
 import { lastModifiedDateFormat } from "../util/format";
 export class PaymentHandler {
     private client: ZohoApiClient;
-
     constructor(client: ZohoApiClient) {
         this.client = client;
     }
-
     public async get(id: string): Promise<Payment | null> {
         const res = await this.client.get<{ payment: Payment }>({
             path: ["customerpayments", id],
@@ -21,7 +19,6 @@ export class PaymentHandler {
 
         return res.payment;
     }
-
     /**
      * List payment using different filters and sort Orders. Default Limit is 200, resulting in 1 API calls - using pagination automatically.
      * @param opts

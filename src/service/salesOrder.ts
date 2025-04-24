@@ -15,11 +15,9 @@ import { lastModifiedDateFormat } from "../util/format";
  */
 export class SalesOrderHandler {
     private client: ZohoApiClient;
-
     constructor(client: ZohoApiClient) {
         this.client = client;
     }
-
     public async create(salesOrder: CreateSalesOrder): Promise<SalesOrder> {
         const res = await this.client.post<{ salesorder: SalesOrder }>({
             path: ["salesorders"],

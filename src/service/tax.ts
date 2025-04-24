@@ -3,11 +3,9 @@ import { Tax } from "../types/tax";
 
 export class TaxHandler {
     private client: ZohoApiClient;
-
     constructor(client: ZohoApiClient) {
         this.client = client;
     }
-
     /**
      * List all current active taxes
      * @returns

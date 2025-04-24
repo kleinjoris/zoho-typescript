@@ -9,11 +9,9 @@ import { lastModifiedDateFormat } from "../util/format";
  */
 export class InvoiceHandler {
     private client: ZohoApiClient;
-
     constructor(client: ZohoApiClient) {
         this.client = client;
     }
-
     public async create(invoice: CreateInvoice): Promise<Invoice> {
         const res = await this.client.post<{ invoice: Invoice }>({
             path: ["invoices"],
